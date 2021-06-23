@@ -1,1 +1,61 @@
-<p>formulario-notas works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Cálculo de notas</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Actividad Paso a Paso 2.3</h6>
+            <p class="card-text">
+                Calcula el estado del estudiante en base a sus notas parciales y nota de examen.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form class="form-control form" [formGroup]="formulario" (ngSubmit)="enviar()">
+                <h5 class="card-title">Datos del Estudiante</h5>
+                <p>Rut:
+                    <input class="form-control" type="text" formControlName="rut">
+                </p>
+                <p>Nombre:
+                    <input class="form-control" type="text" formControlName="nombre">
+                </p>
+                <div formGroupName="notas">
+                    <p>Ingrese Nota 1:
+                        <input class="form-control" type="number" formControlName="nota1">
+                    </p>
+                    <p>Ingrese Nota 2:
+                        <input class="form-control" type="number" formControlName="nota2">
+                    </p>
+                    <p>Ingrese Nota 3:
+                        <input class="form-control" type="number" formControlName="nota3">
+                    </p>
+                    <p>Ingrese Nota 4:
+                        <input class="form-control" type="number" formControlName="nota4">
+                    </p>
+                    <p>Ingrese Nota Examen:
+                        <input class="form-control" type="number" formControlName="examen">
+                    </p>
+                </div>
+                <div>
+                    <button class="btn btn-success" type="submit">Enviar</button>
+                    <button class="btn btn-warning" type="reset">Borrar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="card notas">
+                <div class="card-body">
+                    <h5 class="card-title">Cálculo de notas</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Nota de Presentación:</h6>
+                    <p class="card-text">{{notaPresentacion}}</p>
+                    <hr>
+                    <h6 class="card-subtitle mb-2 text-muted">Nota Final:</h6>
+                    <p class="card-text">{{notaFinal}}</p>
+                    <hr>
+                    <h6 class="card-subtitle mb-2 text-muted">Estado:</h6>
+                    <p class="card-text">{{salida}}</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

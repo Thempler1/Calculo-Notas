@@ -1,0 +1,14 @@
+button{
+    margin-right: 20px;
+}
+
+.card, .form-control {
+    margin-top: 20px;
+}
+.form {
+    padding: 20px;
+}
+
+.notas {
+    margin-bottom: 20px;
+}
